@@ -1,9 +1,6 @@
 #!/bin/bash
 
 USER=`whoami`
-if [ $USER != "root" ];then
-        exit 1
-fi
 HOSTNAME=`uname -n`
 IP=`hostname -i`
 RELEASE=`cat /etc/os-release | grep PRETTY_NAME | cut -d '"' -f2`
@@ -14,10 +11,10 @@ PSA=`ps -Afl | wc -l`
 
 # time of day
 HOUR=$(date +"%H")
-if [ $HOUR -lt 12  -a $HOUR -ge 0 ]
-then    TIME="morning"
-elif [ $HOUR -lt 17 -a $HOUR -ge 12 ]
-then    TIME="afternoon"
+if [ $HOUR -lt 12  -a $HOUR -ge 0 ]; then    
+    TIME="morning"
+elif [ $HOUR -lt 17 -a $HOUR -ge 12 ]; then
+    TIME="afternoon"
 else
     TIME="evening"
 fi
@@ -36,9 +33,9 @@ LOAD15=`cat /proc/loadavg | awk {'print $3'}`
 
 
 echo -e "\e[7m--- GOOD $TIME $USER ----\e[0m"
-figlet -c "Huler-VPN"
-MESSAGE=`/usr/bin/fortune | /usr/bin/cowsay -f tux`
-echo -e " $MESSAGE"
+#figlet -c "Huler-VPN"
+#MESSAGE=`/usr/bin/fortune | /usr/bin/cowsay -f tux`
+#echo -e " $MESSAGE"
 
 COLOR_COLUMN="\e[1m-"
 COLOR_VALUE="\e[31m"
