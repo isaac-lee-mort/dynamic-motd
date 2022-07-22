@@ -32,7 +32,7 @@ LOAD5=`cat /proc/loadavg | awk {'print $2'}`
 LOAD15=`cat /proc/loadavg | awk {'print $3'}`
 
 
-echo -e "\e[7m--- GOOD $TIME $USER ----\e[0m"
+echo -e "\e[7m--- Good $TIME $USER ----\e[0m"
 #figlet -c "Message Here"
 #MESSAGE=`/usr/bin/fortune | /usr/bin/cowsay -f tux`
 #echo -e " $MESSAGE"
